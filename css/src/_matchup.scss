@@ -1,0 +1,74 @@
+
+
+.checkboxes {
+	.checkbox {
+		clear: left;
+		float: left;
+		width: 10%;
+		text-align: right;
+		padding: 3px 5px;
+
+		@include respond-to( 768px ) {
+			width: 6%;
+		}
+	}
+
+	.checkbox-label {
+		float: left;
+		width: 90%;
+		padding: 5px;
+
+		@include respond-to( 768px ) {
+			width: 94%;
+		}
+	}
+
+	&.two-column {
+		.checkbox {
+			@include respond-to( 1024px ) {
+				width: 6%;
+				clear: none;
+			}
+		}
+
+		.checkbox-label {
+			@include respond-to( 1024px) {
+				width: 44%;
+			}
+		}
+	}
+}
+
+
+.matchup {
+	margin-top: -50px;
+}
+
+
+.submit-button {
+	padding: 0 20px;
+
+	@include respond-to( 768px ) {
+		padding: 20px 40px;
+	}
+
+	input[type=submit] {
+		display: inline-block;
+		border: 0;
+		background: $teal;
+		color: white;
+		padding: 15px 50px 15px 20px;
+		border-radius: 15px;
+		background: $teal url(../img/icon-circle-arrow.png) right center no-repeat;
+		border-right: 10px solid $teal;
+		font-size: 20px;
+		text-transform: uppercase;
+		margin-top: 20px;
+		cursor: pointer;
+
+		&:hover {
+			opacity: .9;
+		}
+	}
+}
+

@@ -1,0 +1,29 @@
+
+
+.sidebar {
+	.widget {
+		padding: 5px 0;
+		font-size: 15px;
+
+		h4 {
+			@include font-bold;
+			color: $navy;
+			padding: 15px 0 7px;
+			font-size: 20px;
+			font-style: normal;
+		}
+
+		ol.tribe-list-widget {
+			padding: 0;
+		}
+	}
+
+	.tribe-events-list-widget ol li {
+		margin-bottom: 10px;
+
+		h4 {
+			font-size: .9em;
+		}
+	}
+}
+

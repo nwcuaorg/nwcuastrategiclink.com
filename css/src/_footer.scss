@@ -1,0 +1,53 @@
+
+
+footer {
+	background: $grey url(../img/bg-waves.png) center center no-repeat;
+	background-size: cover;
+	color: white;
+	@include clearfix;
+
+	.column {
+		padding: 20px;
+
+		@include respond-to( 768px ) {
+			float: left;
+			width: 33%;
+			border-left: 4px solid white;
+			min-height: 400px;
+
+			&.first {
+				width: 32%;
+				border-left: 0;
+			}
+		}
+
+		@include respond-to( 1024px ) {
+			padding: 30px 40px;
+		}
+	}
+	
+	h3 {
+		@include font;
+		text-transform: uppercase;
+		font-size: 1.6em;
+		line-height: 1.2em;
+	}
+
+	a {
+		color: white;
+		text-decoration: none;
+	}
+
+	nav {
+		a {
+			display: block;
+			padding: 3px;
+		}
+	}
+
+	.social {
+		padding: 10px 0;
+		text-align: center;
+	}
+}
+
