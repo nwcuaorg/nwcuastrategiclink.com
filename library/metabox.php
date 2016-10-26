@@ -3,7 +3,7 @@
 
 // init cmb2
 require_once( 'cmb2/init.php' );
-
+require_once( 'cmb2-taxonomy/Taxonomy_MetaData_CMB2.php' );
 
 global $goals, $stages;
 
@@ -527,8 +527,6 @@ add_filter( 'cmb2_show_on', 'cmb2_metabox_show_on_template', 10, 2 );
 
 
 function cmb2_taxonomy_meta_initiate() {
-
-    require_once( 'cmb2-taxonomy/Taxonomy_MetaData_CMB2.php' );
 
     /**
      * Semi-standard CMB2 metabox/fields array
