@@ -43,7 +43,7 @@ get_header();
 					<?php
 				} // end if
 				?>
-				<button class="home-third-button link-news" data-url="http://www.nwcua.org/member-resources/anthem/tag/industry-insight"><span>All Link News</span></button>
+				<button class="home-third-button link-news" data-url="/blog"><span>All Link News</span></button>
 				<div class="clearfix"></div>
 			</div>
 
