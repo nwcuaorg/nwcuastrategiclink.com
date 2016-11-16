@@ -242,7 +242,8 @@ function page_metaboxes( $meta_boxes ) {
     // accordion metabox
     $prod_accordion_metabox = new_cmb2_box( array(
         'id' => 'prod_accordion_metabox',
-        'title' => 'Product Accordion',
+        'title' => 'Product Accordion (OLD)',
+        'description' => "This section will be removed, if you're editing this page, please move this product accordion into the section labeled 'NEW' and empty these fields.",
         'object_types' => array( 'page' ), // post type
         'show_on' => array(
             'key' => 'template',
@@ -285,7 +286,7 @@ function page_metaboxes( $meta_boxes ) {
     // accordion metabox
     $prod_accordions_metabox = new_cmb2_box( array(
         'id' => 'prod_accordions_metabox',
-        'title' => 'Product Accordions',
+        'title' => 'Product Accordions (NEW)',
         'object_types' => array( 'page' ), // post type
         'show_on' => array(
             'key' => 'template',
@@ -362,7 +363,8 @@ function page_metaboxes( $meta_boxes ) {
     // accordion metabox
     $part_accordion_metabox = new_cmb2_box( array(
         'id' => 'part_accordion_metabox',
-        'title' => 'Partner Accordion',
+        'title' => 'Partner Accordion (OLD)',
+        'description' => "This section will be removed, if you're editing this page, please move this partner accordion into the section labeled 'NEW' and empty these fields.",
         'object_types' => array( 'page' ), // post type
         'show_on' => array(
             'key' => 'template',
@@ -405,7 +407,7 @@ function page_metaboxes( $meta_boxes ) {
     // accordion metabox
     $part_accordions_metabox = new_cmb2_box( array(
         'id' => 'part_accordions_metabox',
-        'title' => 'Partner Accordions',
+        'title' => 'Partner Accordions (NEW)',
         'object_types' => array( 'page' ), // post type
         'show_on' => array(
             'key' => 'template',
