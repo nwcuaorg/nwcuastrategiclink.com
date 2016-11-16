@@ -257,15 +257,19 @@
 		border-radius: 20px;
 		overflow: hidden;
 
+		img {
+			display: block;
+		}
+
 		@include respond-to( 480px ) {
 			width: 46%;
-			margin: 0 2%;
+			margin: 0 2% 10px;
 			float: left;
 		}
 
 		@include respond-to( 768px ) {
 			width: 31.33%;
-			margin: 0 1%;
+			margin: 0 1% 10px;
 		}
 
 		@include respond-to( 1024px ) {
