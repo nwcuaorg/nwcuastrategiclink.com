@@ -162,6 +162,71 @@ function page_metaboxes( $meta_boxes ) {
 
 
 
+    // accordion metabox
+    $accordion_metabox = new_cmb2_box( array(
+        'id' => 'accordion_metabox',
+        'title' => 'General Accordions',
+        'object_types' => array( 'page' ), // post type
+        'show_on' => array(
+            'key' => 'template',
+            'value' => array( "" )
+        ),
+        'context' => 'normal',
+        'priority' => 'high',
+    ) );
+
+    $accordion_metabox_group = $accordion_metabox->add_field( array(
+        'id' => CMB_PREFIX . 'accordion',
+        'type' => 'group',
+        'options' => array(
+            'add_button' => __('Add Box', 'cmb'),
+            'remove_button' => __('Remove Box', 'cmb'),
+            'group_title'   => __( 'Accordion Box {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable' => true, // beta
+        )
+    ) );
+
+    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
+        'name' => 'Title',
+        'id'   => 'title',
+        'type' => 'text',
+    ) );
+
+    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
+        'name' => 'Icon',
+        'id'   => 'icon',
+        'type' => 'file',
+        'preview_size' => array( 30, 30 )
+    ) );
+
+    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
+        'name' => 'Color',
+        'id'   => 'color',
+        'type' => 'select',
+        'default' => 'teal',
+        'options' => $colors
+    ) );
+
+    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
+        'name' => 'Default State',
+        'id'   => 'state',
+        'type' => 'select',
+        'default' => 'closed',
+        'options' => array(
+            'closed' => 'Closed',
+            'open' => 'Open',
+        )
+    ) );
+
+    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
+        'name' => 'Content',
+        'id'   => 'content',
+        'type' => 'wysiwyg',
+        'options' => array( 'textarea_rows' => 7 )
+    ) );
+
+
+
 
     // select all products
     $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'orderby' => 'name', 'order' => 'ASC' );
@@ -400,70 +465,6 @@ function page_metaboxes( $meta_boxes ) {
         'options' => $partners,
     ) );
 
-
-
-    // accordion metabox
-    $accordion_metabox = new_cmb2_box( array(
-        'id' => 'accordion_metabox',
-        'title' => 'General Accordions',
-        'object_types' => array( 'page' ), // post type
-        'show_on' => array(
-            'key' => 'template',
-            'value' => array( "" )
-        ),
-        'context' => 'normal',
-        'priority' => 'high',
-    ) );
-
-    $accordion_metabox_group = $accordion_metabox->add_field( array(
-        'id' => CMB_PREFIX . 'accordion',
-        'type' => 'group',
-        'options' => array(
-            'add_button' => __('Add Box', 'cmb'),
-            'remove_button' => __('Remove Box', 'cmb'),
-            'group_title'   => __( 'Accordion Box {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
-            'sortable' => true, // beta
-        )
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Title',
-        'id'   => 'title',
-        'type' => 'text',
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Icon',
-        'id'   => 'icon',
-        'type' => 'file',
-        'preview_size' => array( 30, 30 )
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Color',
-        'id'   => 'color',
-        'type' => 'select',
-        'default' => 'teal',
-        'options' => $colors
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Default State',
-        'id'   => 'state',
-        'type' => 'select',
-        'default' => 'closed',
-        'options' => array(
-            'closed' => 'Closed',
-            'open' => 'Open',
-        )
-    ) );
-
-    $accordion_metabox->add_group_field( $accordion_metabox_group, array(
-        'name' => 'Content',
-        'id'   => 'content',
-        'type' => 'wysiwyg',
-        'options' => array( 'textarea_rows' => 7 )
-    ) );
 
 
 
