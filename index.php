@@ -11,7 +11,7 @@ get_header(); ?>
 			<div class="quarter sidebar">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-blog') ) : ?><!-- no sidebar --><?php endif; ?>
 			</div>
-			<div class="three-quarter">
+			<div class="three-quarter blog-list">
 			<img src="<?php bloginfo( 'template_url' ) ?>/img/logo-blog.png">
 			<?php
 			if ( is_search() ) {
@@ -21,8 +21,11 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
 				?>
 				<hr>
-				<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
-				<?php the_excerpt(); ?>
+				<div class="entry group">
+					<?php the_post_thumbnail(); ?>
+					<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+					<?php the_excerpt(); ?>
+				</div>
 				<?php
 			endwhile;
 			?>

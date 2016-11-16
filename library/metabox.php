@@ -217,6 +217,71 @@ function page_metaboxes( $meta_boxes ) {
 
 
 
+    // accordion metabox
+    $prod_accordions_metabox = new_cmb2_box( array(
+        'id' => 'prod_accordions_metabox',
+        'title' => 'Product Accordions',
+        'object_types' => array( 'page' ), // post type
+        'show_on' => array(
+            'key' => 'template',
+            'value' => array( "" )
+        ),
+        'context' => 'normal',
+        'priority' => 'high',
+    ) );
+
+    $prod_accordions_metabox_group = $prod_accordions_metabox->add_field( array(
+        'id' => CMB_PREFIX . 'prod_accordions',
+        'type' => 'group',
+        'options' => array(
+            'add_button' => __('Add Box', 'cmb'),
+            'remove_button' => __('Remove Box', 'cmb'),
+            'group_title'   => __( 'Accordion Box {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable' => true, // beta
+        )
+    ) );
+
+    $prod_accordions_metabox->add_group_field( $prod_accordions_metabox_group, array(
+        'name' => 'Title',
+        'id'   => 'title',
+        'type' => 'text',
+    ) );
+
+    $prod_accordions_metabox->add_group_field( $prod_accordions_metabox_group, array(
+        'name' => 'Color',
+        'id'   => 'color',
+        'type' => 'select',
+        'default' => 'teal',
+        'options' => $colors
+    ) );
+
+    $prod_accordions_metabox->add_group_field( $prod_accordions_metabox_group, array(
+        'name' => 'Icon',
+        'id'   => 'icon',
+        'type' => 'file',
+        'preview_size' => array( 30, 30 )
+    ) );
+
+    $prod_accordions_metabox->add_group_field( $prod_accordions_metabox_group, array(
+        'name' => 'Default State',
+        'id'   => 'state',
+        'type' => 'select',
+        'default' => 'closed',
+        'options' => array(
+            'closed' => 'Closed',
+            'open' => 'Open',
+        )
+    ) );
+
+    $prod_accordions_metabox->add_group_field( $prod_accordions_metabox_group, array(
+        'name' => 'Products',
+        'id' => 'products',
+        'type' => 'multicheck',
+        'options' => $products,
+    ) );
+
+
+
 
     // select all products
     $args = array( 'post_type' => 'partner', 'posts_per_page' => -1, 'orderby' => 'name', 'order' => 'ASC' );
@@ -266,6 +331,71 @@ function page_metaboxes( $meta_boxes ) {
     $part_accordion_metabox->add_field( array(
         'name' => 'Partners',
         'id' => CMB_PREFIX . 'part_accordion_partners',
+        'type' => 'multicheck',
+        'options' => $partners,
+    ) );
+
+
+
+    // accordion metabox
+    $part_accordions_metabox = new_cmb2_box( array(
+        'id' => 'part_accordions_metabox',
+        'title' => 'Partner Accordions',
+        'object_types' => array( 'page' ), // post type
+        'show_on' => array(
+            'key' => 'template',
+            'value' => array( "" )
+        ),
+        'context' => 'normal',
+        'priority' => 'high',
+    ) );
+
+    $part_accordions_metabox_group = $part_accordions_metabox->add_field( array(
+        'id' => CMB_PREFIX . 'part_accordions',
+        'type' => 'group',
+        'options' => array(
+            'add_button' => __('Add Box', 'cmb'),
+            'remove_button' => __('Remove Box', 'cmb'),
+            'group_title'   => __( 'Accordion Box {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable' => true, // beta
+        )
+    ) );
+
+    $part_accordions_metabox->add_group_field( $part_accordions_metabox_group, array(
+        'name' => 'Title',
+        'id'   => 'title',
+        'type' => 'text',
+    ) );
+
+    $part_accordions_metabox->add_group_field( $part_accordions_metabox_group, array(
+        'name' => 'Color',
+        'id'   => 'color',
+        'type' => 'select',
+        'default' => 'teal',
+        'options' => $colors
+    ) );
+
+    $part_accordions_metabox->add_group_field( $part_accordions_metabox_group, array(
+        'name' => 'Icon',
+        'id'   => 'icon',
+        'type' => 'file',
+        'preview_size' => array( 30, 30 )
+    ) );
+
+    $part_accordions_metabox->add_group_field( $part_accordions_metabox_group, array(
+        'name' => 'Default State',
+        'id'   => 'state',
+        'type' => 'select',
+        'default' => 'closed',
+        'options' => array(
+            'closed' => 'Closed',
+            'open' => 'Open',
+        )
+    ) );
+
+    $part_accordions_metabox->add_group_field( $part_accordions_metabox_group, array(
+        'name' => 'Partners',
+        'id' => 'partners',
         'type' => 'multicheck',
         'options' => $partners,
     ) );

@@ -26,17 +26,17 @@ function the_accordion() {
 				?>
 			<div class="accordion-box<?php print ( $state == 'open' ? ' open' : '' ); ?> bg-<?php print $color ?>">
 				<div class="accordion-box-title">
-					<?php if ( $accordion_location == 'bottom' ) { ?><div class="wrap"><?php } ?>
+					<div class="wrap">
 					<?php if ( !empty( $icon ) ) { ?>
 					<span class="accordion-box-title-icon"><img src="<?php print $icon ?>"></span>
 					<?php } ?>
 					<h4><?php print $title ?></h4>
-					<?php if ( $accordion_location == 'bottom' ) { ?></div><?php } ?>
+					</div>
 				</div>
 				<div class="accordion-box-content">
-					<?php if ( $accordion_location == 'bottom' ) { ?><div class="wrap"><?php } ?>
+					<div class="wrap">
 					<?php print wpautop( $content ); ?>
-					<?php if ( $accordion_location == 'bottom' ) { ?></div><?php } ?>
+					</div>
 				</div>
 			</div>
 				<?php
@@ -44,7 +44,9 @@ function the_accordion() {
 			}
 		}
 		product_accordion();
+		product_accordions();
 		partner_accordion();
+		partner_accordions();
 		?>
 		</div>
 		<?php
@@ -83,6 +85,52 @@ function product_accordion() {
 
 
 
+function product_accordions() {
+	$boxes = get_post_meta( get_the_ID(), CMB_PREFIX . "prod_accordions", 1 );
+
+	if ( !empty( $boxes ) ) {
+		$count = 0;
+		foreach ( $boxes as $key => $box ) {
+			if ( !empty( $box["title"] ) && !empty( $box["products"] ) ) {
+
+				// store the title and subtitle
+				$title = ( isset( $box["title"] ) ? $box["title"] : 'Products' );
+				$icon = ( isset( $box["icon"] ) ? $box["icon"] : '' );
+				$color = ( isset( $box["color"] ) ? $box["color"] : 'teal' );
+				$state = ( isset( $box["state"] ) ? $box["state"] : 'closed' );
+				$products = ( isset( $box["products"] ) ? $box["products"] : '' );
+
+				?>
+			<div class="accordion-box<?php print ( $state == 'open' ? ' open' : '' ); ?> bg-<?php print $color ?> product-accordion">
+				<div class="accordion-box-title">
+					<div class="wrap">
+					<?php if ( !empty( $icon ) ) { ?>
+					<span class="accordion-box-title-icon"><img src="<?php print $icon ?>"></span>
+					<?php } ?>
+					<h4><?php print $title ?></h4>
+					</div>
+				</div>
+				<div class="accordion-box-content">
+					<div class="wrap">
+						<div class="products">
+							<div class="product-list">
+								<?php the_product_list( get_cmb_value( 'prod_accordion_products' ) ); ?>
+							</div>
+							<button class="product-nav previous">Previous</button>
+							<button class="product-nav next">Next</button>
+						</div>
+					</div>
+				</div>
+			</div>
+				<?php
+				$count++;
+			}
+		}
+	}
+}
+
+
+
 function partner_accordion() {
 	if ( has_cmb_value( 'part_accordion_title' ) && has_cmb_value( 'part_accordion_partners' ) ) {
 		?>
@@ -102,6 +150,46 @@ function partner_accordion() {
 				</div>
 			</div>
 		<?php
+	}
+}
+
+
+
+function partner_accordions() {
+	$boxes = get_post_meta( get_the_ID(), CMB_PREFIX . "part_accordions", 1 );
+
+	if ( !empty( $boxes ) ) {
+		$count = 0;
+		foreach ( $boxes as $key => $box ) {
+			if ( !empty( $box["title"] ) && !empty( $box["partners"] ) ) {
+
+				// store the title and subtitle
+				$title = ( isset( $box["title"] ) ? $box["title"] : 'Partners' );
+				$icon = ( isset( $box["icon"] ) ? $box["icon"] : '' );
+				$color = ( isset( $box["color"] ) ? $box["color"] : 'teal' );
+				$state = ( isset( $box["state"] ) ? $box["state"] : 'closed' );
+				$partners = ( isset( $box["partners"] ) ? $box["partners"] : '' );
+
+				?>
+			<div class="accordion-box<?php print ( $state == 'open' ? ' open' : '' ); ?> bg-<?php print $color ?> partner-accordion">
+				<div class="accordion-box-title">
+					<div class="wrap">
+					<?php if ( !empty( $icon ) ) { ?>
+					<span class="accordion-box-title-icon"><img src="<?php print $icon ?>"></span>
+					<?php } ?>
+					<h4><?php print $title ?></h4>
+					</div>
+				</div>
+				<div class="accordion-box-content">
+					<div class="wrap partner-logos group">
+					<?php the_partner_list( $partners ); ?>
+					</div>
+				</div>
+			</div>
+				<?php
+				$count++;
+			}
+		}
 	}
 }
 
