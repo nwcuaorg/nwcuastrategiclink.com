@@ -254,6 +254,8 @@
 .partner-logos {
 	.partner-logo {
 		text-align: center;
+		border-radius: 20px;
+		overflow: hidden;
 
 		@include respond-to( 480px ) {
 			width: 46%;
