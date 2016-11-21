@@ -330,7 +330,7 @@ function the_partner_ad() {
 			*/
 			if ( has_cmb_value( 'partner_ad_image' ) ) {
 				?>
-		<a href="<?php the_permalink(); ?>"<?php print ( $count===1 ? : ' class="first"' ; '' ); ?>><img src="<?php show_cmb_value( 'partner_ad_image' ) ?>" class="ad"></a>
+		<a href="<?php the_permalink(); ?>"<?php print ( $count===1 ? ' class="first"' : '' ); ?>><img src="<?php show_cmb_value( 'partner_ad_image' ) ?>" class="ad"></a>
 				<?php 
 				$count++;
 			}
