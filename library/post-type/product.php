@@ -321,7 +321,7 @@ function the_partner_ad() {
 		while ( $the_query->have_posts() ) : $the_query->the_post();
 			if ( has_cmb_value( 'partner_ad_link' ) ) {
 				$ad_url = get_cmb_value( 'partner_ad_link' );
-			} else is ( has_cmb_value( 'partner_website' ) ) {
+			} else if ( has_cmb_value( 'partner_website' ) ) {
 				$ad_url = get_cmb_value( 'partner_website' );
 			}
 			if ( isset( $ad_url ) && has_cmb_value( 'partner_ad_image' ) ) {
