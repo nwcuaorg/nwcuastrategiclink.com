@@ -604,6 +604,13 @@ function page_metaboxes( $meta_boxes ) {
         'preview_size' => array( 768, 90 )
     ) );
 
+    $partner_info->add_field( array(
+        'name' => 'Ad Link URL',
+        'desc' => 'Specify a URL here to override the ad destination. By default, the ads use the "Website" URL specified above.',
+        'id' => CMB_PREFIX . 'partner_ad_link',
+        'type' => 'text_url'
+    ) );
+
 }
 add_filter( 'cmb2_init', 'page_metaboxes' );
 
