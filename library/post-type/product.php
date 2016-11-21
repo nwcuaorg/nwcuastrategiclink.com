@@ -317,7 +317,8 @@ function the_partner_ad() {
 	?>
 	<div class="partner-ad">
 	<?php 
-	if ( $the_query->have_posts() ) { 
+	if ( $the_query->have_posts() ) {
+		$count = 1;
 		while ( $the_query->have_posts() ) : $the_query->the_post();
 			/*
 			if ( has_cmb_value( 'partner_ad_link' ) ) {
@@ -329,8 +330,9 @@ function the_partner_ad() {
 			*/
 			if ( has_cmb_value( 'partner_ad_image' ) ) {
 				?>
-		<a href="<?php the_permalink(); ?>"><img src="<?php show_cmb_value( 'partner_ad_image' ) ?>" class="ad"></a>
+		<a href="<?php the_permalink(); ?>"<?php print ( $count===1 ? : ' class="first"' ; '' ); ?>><img src="<?php show_cmb_value( 'partner_ad_image' ) ?>" class="ad"></a>
 				<?php 
+				$count++;
 			}
 		endwhile;
 	} ?>
