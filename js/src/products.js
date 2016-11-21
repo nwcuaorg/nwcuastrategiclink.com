@@ -138,8 +138,8 @@ jQuery(document).ready(function($){
 	if ( $('.partner-ad') ) {
 		var ad_interval=setInterval(function(){
 			var next_ad=( $(".partner-ad a:visible").next("a").length>0 ? $(".partner-ad a:visible").next("a") : $(".partner-ad a:first-child") );
-			$(".partner-ad a:visible").slideUp( 500 );
-			next_ad.slideDown( 500 );				
+			$(".partner-ad a:visible").fadeOut( 500 );
+			next_ad.fadeIn( 500 );				
 		}, 10000);
 	}
 
