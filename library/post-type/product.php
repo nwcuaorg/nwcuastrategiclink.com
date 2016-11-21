@@ -319,12 +319,15 @@ function the_partner_ad() {
 	<?php 
 	if ( $the_query->have_posts() ) { 
 		while ( $the_query->have_posts() ) : $the_query->the_post();
+			/*
 			if ( has_cmb_value( 'partner_ad_link' ) ) {
 				$ad_url = get_cmb_value( 'partner_ad_link' );
 			} else if ( has_cmb_value( 'partner_website' ) ) {
 				$ad_url = get_cmb_value( 'partner_website' );
 			}
 			if ( isset( $ad_url ) && has_cmb_value( 'partner_ad_image' ) ) {
+			*/
+			if ( has_cmb_value( 'partner_ad_image' ) ) {
 				?>
 		<a href="<?php the_permalink(); ?>"><img src="<?php show_cmb_value( 'partner_ad_image' ) ?>" class="ad"></a>
 				<?php 
