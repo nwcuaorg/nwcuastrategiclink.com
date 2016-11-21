@@ -412,3 +412,15 @@
 		}
 	}
 }
+
+
+.partner-ad {
+	a {
+		display: none;
+
+		&:first {
+			display: block;
+		}
+	}
+}
+
