@@ -7,7 +7,7 @@ get_header(); ?>
 
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content content-wide" role="main">
+		<div id="content" class="site-content content-wide wrap" role="main">
 			<div class="quarter sidebar">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-blog') ) : ?><!-- no sidebar --><?php endif; ?>
 			</div>
