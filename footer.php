@@ -22,7 +22,11 @@
 					877.928.6397 Fax<br>
 					<a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a></p>
 
-				<p><strong>Oregon Office:</strong>
+				<p><strong>Idaho Office:</strong><br>
+					2770 S. Vista Ave<br>
+					Boise, ID 83705</p>
+
+				<p><strong>Oregon Office:</strong><br>
 					13221 SW 68th Pkwy,<br>
 					Suite 400<br>
 					Tigard, OR 97223</p>
