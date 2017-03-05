@@ -167,7 +167,7 @@ header {
 
 		@include respond-to( 768px ) {
 			position: absolute;
-			top: 90px;
+			top: 95px;
 			left: 50%;
 			margin-left: 150px;
 		}
@@ -184,7 +184,7 @@ header {
 		@include respond-to( 768px ) {
 			display: block;
 			position: absolute;
-			top: 30px;
+			top: 25px;
 			left: 50%;
 			margin-left: 150px;
 		}
