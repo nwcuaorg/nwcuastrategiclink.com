@@ -31,7 +31,7 @@ the_showcase();
 
 ?>
 
-	<div id="content" class="wrap group partner" role="main">
+	<div id="content" class="wrap group partner content-two-column" role="main">
 
 		<div class="sidebar quarter">
 			<div class="logo">
