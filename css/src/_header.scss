@@ -58,7 +58,7 @@ header {
 					display: block;
 					@include font;
 					padding: 15px 5px;
-					font-size: 16px;
+					font-size: 14px;
 					line-height: 16px;
 					color: white;
 					text-align: center;
@@ -67,11 +67,11 @@ header {
 
 					@include respond-to( $menu-bp ) {
 						display: inline-block;
-						padding: 15px 8px;
+						padding: 15px 5px;
 					}
 
 					@include respond-to( 1220px ) {
-						padding: 15px 15px;
+						padding: 15px 8px;
 					}
 				}
 
@@ -99,6 +99,7 @@ header {
 						background: $teal;
 						@include clearfix;
 						text-align: left;
+						z-index: 1000;
 					}
 
 					li {
