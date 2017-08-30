@@ -403,7 +403,6 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
 
-
     // accordion metabox
     $part_accordions_metabox = new_cmb2_box( array(
         'id' => 'part_accordions_metabox',
@@ -597,7 +596,15 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
     $partner_info->add_field( array(
-        'name' => 'Ad Image',
+        'name' => 'Ad Image (320x320)',
+        'id' => CMB_PREFIX . 'partner_ad_image_small',
+        'desc' => 'Upload an ad image for this partner (320x320).',
+        'type' => 'file',
+        'preview_size' => array( 768, 90 )
+    ) );
+
+    $partner_info->add_field( array(
+        'name' => 'Ad Image ',
         'id' => CMB_PREFIX . 'partner_ad_image',
         'desc' => 'Upload an ad image for this partner (768x90).',
         'type' => 'file',
