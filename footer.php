@@ -23,7 +23,8 @@
 					<a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a></p>
 
 				<p><strong>Idaho Office:</strong><br>
-					2710 W Sunrise Rim Road, Suite 100<br>
+					2710 W Sunrise Rim Road<br>
+					Suite 100<br>
 					Boise, ID 83705</p>
 
 				<p><strong>Oregon Office:</strong><br>
