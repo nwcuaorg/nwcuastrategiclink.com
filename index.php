@@ -22,7 +22,7 @@ get_header(); ?>
 				?>
 				<hr>
 				<div class="entry group">
-					<?php the_post_thumbnail( array( 350, 200 ) ); ?>
+					<?php the_post_thumbnail( array( 350, 220 ) ); ?>
 					<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
 					<?php the_excerpt(); ?>
 				</div>
