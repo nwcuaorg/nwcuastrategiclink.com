@@ -31,4 +31,9 @@ include( "library/accordion.php" );
 // include the anthem feed parsing functionality
 include( "library/anthem-feed.php" );
 
+
+// process shortcodes in text widgets.
+add_filter( 'widget_text', 'do_shortcode' );
+
+
 ?>
