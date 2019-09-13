@@ -38,23 +38,20 @@ the_showcase();
 				<img src="<?php print $logo ?>">
 			</div>
 			<div class="connect">
-				<h4>Connect With Us</h4>
+				<h4>Get Connected</h4>
+				<div class="contact<?php print ( count( $contacts )>1 ? ' small' : '' ) ?>">
+					<p>Phone: 208.286.6794<br>
+					Email: <a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a></p>
+				</div>
 				<?php
+				/*
 				if ( !empty( $contacts ) ) { 
 					foreach ( $contacts as $contact ) {
 						?>
-				<div class="contact<?php print ( count( $contacts )>1 ? ' small' : '' ) ?>">
-					<?php if ( isset( $contact["photo"] ) ) { if ( !empty( $contact["photo"] ) ) { ?><img src="<?php print $contact["photo"] ?>" class="photo"><?php } } ?>
-					<p>
-						<?php if ( isset( $contact["name"] ) ) { if ( !empty( $contact["name"] ) ) { ?><strong><?php print $contact["name"] ?></strong><br><?php } } ?>
-						<?php if ( isset( $contact["phone"] ) ) { if ( !empty( $contact["phone"] ) ) { ?>Phone: <?php print $contact["phone"] ?><br><?php } } ?>
-						<?php if ( isset( $contact["email"] ) ) { if ( !empty( $contact["email"] ) ) { ?><a href="mailto:<?php print strtolower( $contact["email"] ) ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/icon-email.png"></a><?php } } ?>
-						<a href="<?php print $website ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/icon-website.png"></a>
-					</p>
-				</div>
 						<?php
 					}
 				}
+				*/
 				?>
 			</div>
 			<?php if ( !empty( $twitter ) ) { ?>
