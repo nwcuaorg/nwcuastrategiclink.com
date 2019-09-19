@@ -41,19 +41,9 @@ the_showcase();
 				<h4>Get Connected</h4>
 				<div class="contact<?php print ( count( $contacts )>1 ? ' small' : '' ) ?>">
 					<p>Phone: 208.286.6794<br>
-					Email: <a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a><br>
-					<a href="<?php print $website ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/icon-website.png"> Partner Website</a></p>
+					Email: <a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a><br><br>
+					<a href="<?php print $website ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/icon-website.png"></a></p>
 				</div>
-				<?php
-				/*
-				if ( !empty( $contacts ) ) { 
-					foreach ( $contacts as $contact ) {
-						?>
-						<?php
-					}
-				}
-				*/
-				?>
 			</div>
 			<?php if ( !empty( $twitter ) ) { ?>
 			<div class="twitter-feed">
