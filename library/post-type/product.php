@@ -201,7 +201,7 @@ function the_product_category_list() {
 		?>
 		<a href="<?php print esc_attr( get_term_link( $tax_term, $taxonomy ) ); ?>"><div class="solution bg-<?php print $category_info['color'] ?>">
 			<div class="solution-icon">
-				<img src="<?php print $category_info['icon'] ?>">
+				<img src="<?php print str_replace( 'http://nwcuastrategiclink.com', '', $category_info['icon'] ) ?>">
 			</div>
 			<h3><?php print $tax_term->name ?></h3>
 		</div></a>
@@ -236,7 +236,7 @@ function the_product_list( $products = '', $random = false ) {
         $products[get_the_ID()]->icon = get_cmb_value( 'product_icon' );
         ?><a href="/product/<?php print $post->post_name ?>"><div class="product bg-<?php print get_cmb_value( 'large-title-color' ) ?>">
 				<div class="product-icon">
-					<img src="<?php print get_cmb_value( 'large-title-icon' ) ?>">
+					<img src="<?php print str_replace( 'http://nwcuastrategiclink.com', '', get_cmb_value( 'large-title-icon' ) ) ?>">
 				</div>
 				<h3><?php print get_the_title() ?></h3>
 			</div></a><?php
@@ -286,7 +286,7 @@ function the_partner_list( $partners = '' ) {
 	<?php if ( $the_query->have_posts() ) { ?>
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<div class="partner-logo">
-				<a href="<?php the_permalink(); ?>"><img src="<?php print get_cmb_value( 'partner_logo' ) ?>"></a>
+				<a href="<?php the_permalink(); ?>"><img src="<?php print str_replace( 'http://nwcuastrategiclink.com', '', get_cmb_value( 'partner_logo' ) ) ?>"></a>
 			</div>
 		<?php endwhile; ?>
 	<?php } else { ?>
@@ -330,7 +330,7 @@ function the_partner_ad() {
 			*/
 			if ( has_cmb_value( 'partner_ad_image' ) ) {
 				?>
-		<a href="<?php the_permalink(); ?>"<?php print ( $count===1 ? ' class="first"' : '' ); ?>><img src="<?php show_cmb_value( 'partner_ad_image' ) ?>" class="ad"></a>
+		<a href="<?php the_permalink(); ?>"<?php print ( $count===1 ? ' class="first"' : '' ); ?>><img src="<?php print str_replace( 'http://nwcuastrategiclink.com', '', get_cmb_value( 'partner_ad_image' ) ) ?>" class="ad"></a>
 				<?php 
 				$count++;
 			}
