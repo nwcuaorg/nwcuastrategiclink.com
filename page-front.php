@@ -34,13 +34,15 @@ get_header();
 
 				// if we have some
 				if ( !empty( $posts ) ) {
-					setup_postdata( $posts[0] );
+					foreach ( $posts as $post ) {
+						setup_postdata( $post );
 					?>
 				<article class="first">
 					<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-					<p><?php the_excerpt(); ?></p>
+					<!--<p><?php the_excerpt(); ?></p>-->
 				</article>
 					<?php
+					}
 				} // end if
 				?>
 				<button class="home-third-button link-news" data-url="/blog"><span>All Link News</span></button>
