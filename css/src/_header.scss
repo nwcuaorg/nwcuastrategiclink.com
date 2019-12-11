@@ -154,6 +154,9 @@ header {
 			background: darken( $grey, 10% ) url(../img/icon-search.png) center center no-repeat;
 			text-indent: -400px;
 			cursor: pointer;
+			margin-bottom: 0;
+			padding: 0;
+			box-shadow: none;
 
 			@include respond-to( 768px ) {
 				right: -6px;
