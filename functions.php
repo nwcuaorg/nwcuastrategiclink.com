@@ -26,6 +26,7 @@ include( "library/metabox.php" );
 include( "library/title.php" );
 include( "library/showcase.php" );
 include( "library/accordion.php" );
+include( "library/buttons.php" );
 
 
 // include the anthem feed parsing functionality
@@ -36,4 +37,3 @@ include( "library/anthem-feed.php" );
 add_filter( 'widget_text', 'do_shortcode' );
 
 
-?>

@@ -1,0 +1,30 @@
+
+
+button, input[type=submit], .btn {
+	display: inline-block;
+	padding: 7px 45px 7px 20px;
+	max-width: 100%;
+	background: $grey;
+	border: 0;
+	color: white;
+	text-decoration: none;
+	background: white url(../img/bg-button-arrow.png) right center no-repeat;
+	margin-bottom: 5px;
+	box-shadow: 0 0 14px rgba( $grey, .4 );
+
+	&:hover {
+		text-decoration: none;
+		opacity: .9;
+	}
+
+	&.navy { background-color: $navy; }
+	&.river { background-color: $river; }
+	&.teal { background-color: $teal; }
+	&.lime { background-color: $lime; }
+	&.orange { background-color: $orange; }
+	&.forest { background-color: $forest; }
+	&.grey { background-color: $grey; }
+	&.grey-dark { background-color: $grey-dark; }
+	&.white { background-color: white; color: $grey-dark; background-image: url(../img/bg-button-arrow-grey.png); }
+}
+
