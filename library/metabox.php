@@ -611,6 +611,33 @@ function page_metaboxes( $meta_boxes ) {
         'preview_size' => array( 768, 90 )
     ) );
 
+    $part_award_group = $partner_info->add_field( array(
+        'id' => CMB_PREFIX . 'part_awards',
+        'type' => 'group',
+        'options' => array(
+            'add_button' => __('Add Award', 'cmb'),
+            'remove_button' => __('Remove Award', 'cmb'),
+            'group_title'   => __( 'Award {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable' => true, // beta
+        )
+    ) );
+    $partner_info->add_group_field( $part_award_group, array(
+        'name' => 'Image',
+        'id'   => 'image',
+        'type' => 'file',
+        'preview_size' => array( 40, 40 )
+    ) );
+    $partner_info->add_group_field( $part_award_group, array(
+        'name' => 'Alternative Text',
+        'id'   => 'alt',
+        'type' => 'text',
+    ) );
+    $partner_info->add_group_field( $part_award_group, array(
+        'name' => 'Link',
+        'id'   => 'link',
+        'type' => 'text',
+    ) );
+
     /*
     $partner_info->add_field( array(
         'name' => 'Ad Link URL',

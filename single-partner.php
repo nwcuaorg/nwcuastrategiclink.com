@@ -45,7 +45,18 @@ the_showcase();
 					<a href="<?php print $website ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/icon-website.png"></a></p>
 				</div>
 			</div>
-			<?php if ( !empty( $twitter ) ) { ?>
+			<?php 
+			if ( has_cmb_value( 'part_awards' ) ) {
+				$awards = get_cmb_value( 'part_awards' ); 
+				foreach ( $awards as $award ) { 
+					if ( !empty( $award['alt'] ) && !empty( $award['image'] ) ) {
+						if ( !empty( $award['link'] ) ) print "<a href='" . $award['link'] . "'>";
+						print "<img src='" . $award['image'] . "' alt='" . $award['alt'] . "' />";
+						if ( !empty( $award['link'] ) ) print "</a>";
+					}
+				}
+			}
+			if ( !empty( $twitter ) ) { ?>
 			<div class="twitter-feed">
 				<h4><a href="https://twitter.com/<?php print $twitter ?>">@<?php print $twitter ?></a></h4>
 				<ul>
