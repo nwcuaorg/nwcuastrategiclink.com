@@ -59,30 +59,37 @@ the_showcase();
 			if ( !empty( $twitter ) ) { ?>
 			<div class="twitter-feed">
 				<h4><a href="https://twitter.com/<?php print $twitter ?>">@<?php print $twitter ?></a></h4>
-				<ul>
 				<?php
-				include( 'library/tweet-php/TweetPHP.php' );
 				$upload_dir = wp_upload_dir();
-				$twitter_feed = new TweetPHP(array(
-					'consumer_key'              => 'rI2mcCD7tUMLKiSYdbea91bv3',
-					'consumer_secret'           => 'w2bmylGVQ2BGGlQb9CFJoI9xqQ3gacjie4UbiCp8wqoP0e7y4V',
-					'access_token'              => '29196496-zk653NF1sbj3mJR54Lkxcv4zmTSvm2GRTrJRf1mUA',
-					'access_token_secret'       => 'QeXhPPB9xYMUAHwhnAsN2BiyIi88G3YR4UFe4aWuDJyyB',
-					'cache_file'            	=> $upload_dir['basedir'] . '/cache/twitter-' . $twitter . '.txt', 
-					'cache_file_raw'        	=> $upload_dir['basedir'] . '/cache/twitter-' . $twitter . '-array.txt', 
-					'twitter_screen_name'       => $twitter,
-					'tweets_to_retrieve'     	=> 3, // Number of tweets to display
-					'tweets_to_display'     	=> 3, // Number of tweets to display
-				));
-				$feed = $twitter_feed->get_tweet_array();
-				foreach ( $feed as $item ) {
-					?>
-					<li><?php print make_clickable( $item['text'] ) ?><br>
-						<div class="date"><a href="https://twitter.com/<?php print $twitter ?>/status/<?php print $item['id'] ?>"><?php print date( "n/j/Y @ g:ia", strtotime( $item['created_at'] ) ); ?></a></div></li>
-					<?php
-				}
+				$ta = new twitterAggregator( array(
+
+					// twitter API consumer key, secret, and oath token and oauth secret
+				    'consumer_key' => "rI2mcCD7tUMLKiSYdbea91bv3",
+				    'consumer_secret' => "w2bmylGVQ2BGGlQb9CFJoI9xqQ3gacjie4UbiCp8wqoP0e7y4V",
+				    'oauth_access_token' => "29196496-zk653NF1sbj3mJR54Lkxcv4zmTSvm2GRTrJRf1mUA",
+				    'oauth_access_token_secret' => "QeXhPPB9xYMUAHwhnAsN2BiyIi88G3YR4UFe4aWuDJyyB",
+
+				    // comma separated list of twitter handles to pull
+				    'usernames' => $twitter,
+
+				    // set the number of tweets to show
+				    'count' => 3,
+
+					// set an update interval (minutes)
+				    'update_interval' => 10,
+
+				    // set the cache directory name/path
+				    'cache_dir' => $upload_dir['basedir'] . '/cache',
+
+				    // boolean, exclude replies, default true
+				    'exclude_replies' => true,
+
+				    // boolean, include retweets, default true
+				    'include_rts' => false
+
+				) );
+				$ta->display_unstyled();
 				?>
-				</ul>
 			</div>
 			<?php } ?>
 		</div>

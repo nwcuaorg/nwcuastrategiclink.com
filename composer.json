@@ -1,0 +1,5 @@
+{
+    "require": {
+        "wp-pure/twitter-aggregator": "^1.1"
+    }
+}

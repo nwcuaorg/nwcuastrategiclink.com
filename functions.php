@@ -1,6 +1,10 @@
 <?php
 
 
+// include composer
+require_once 'vendor/autoload.php';
+
+
 // set a custom field prefix
 define( "CMB_PREFIX", "_p_" );
 

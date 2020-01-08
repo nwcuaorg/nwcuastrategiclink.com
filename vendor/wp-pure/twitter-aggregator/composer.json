@@ -1,0 +1,19 @@
+{
+    "name": "wp-pure/twitter-aggregator",
+    "description": "A Twitter aggregator to aggregate multiple twitter accounts into a single lising. Includes caching - originally intended to work with WordPress - but will also work with any PHP application.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "James Pederson",
+            "email": "james@jpederson.com"
+        }
+    ],
+    "require": {
+        "j7mbo/twitter-api-php":"*"
+    },
+    "autoload": {
+        "classmap": ["twitterAggregator.php"],
+        "files": ["wordpress.php"]
+    }
+}
