@@ -13,6 +13,7 @@ $contacts = get_cmb_value( 'partner_contacts' );
 $phone = get_cmb_value( 'partner_phone' );
 $email = get_cmb_value( 'partner_email' );
 $twitter = str_replace( "@", "", get_cmb_value( 'partner_twitter' ) );
+$linkedin = str_replace( "@", "", get_cmb_value( 'partner_linkedin' ) );
 $website = get_cmb_value( 'partner_website' );
 $url = parse_url( $website );
 if ( !empty( $url['host'] ) ) { 
@@ -41,24 +42,21 @@ the_showcase();
 				<h4>Get Connected</h4>
 				<div class="contact<?php print ( count( $contacts )>1 ? ' small' : '' ) ?>">
 					<p>Phone: 208.286.6794<br>
-					Email: <a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a><br><br>
-					<a href="<?php print $website ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/icon-website.png"></a></p>
+					Email: <a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a></p>
+					<?php if ( !empty( $website ) || !empty( $linkedin ) ) { ?><p><?php } ?>
+					<?php if ( !empty( $website ) ) { ?>
+					<a href="<?php print $website ?>" class="btn teal" target="_blank">Visit our Website</a><br>
+					<?php } ?>
+					<?php if ( !empty( $linkedin ) ) { ?>
+					<a href="<?php print $linkedin; ?>" class="btn teal" target="_blank">Visit us on LinkedIn</a>
+					<?php } ?>
+					<?php if ( !empty( $website ) || !empty( $linkedin ) ) { ?></p><?php } ?>
 				</div>
 			</div>
 			<?php 
-			if ( has_cmb_value( 'part_awards' ) ) {
-				$awards = get_cmb_value( 'part_awards' ); 
-				foreach ( $awards as $award ) { 
-					if ( !empty( $award['alt'] ) && !empty( $award['image'] ) ) {
-						if ( !empty( $award['link'] ) ) print "<a href='" . $award['link'] . "'>";
-						print "<img src='" . $award['image'] . "' alt='" . $award['alt'] . "' />";
-						if ( !empty( $award['link'] ) ) print "</a>";
-					}
-				}
-			}
 			if ( !empty( $twitter ) ) { ?>
 			<div class="twitter-feed">
-				<h4><a href="https://twitter.com/<?php print $twitter ?>">@<?php print $twitter ?></a></h4>
+				<h4><a href="https://twitter.com/<?php print $twitter ?>">Twitter</a></h4>
 				<?php
 				$upload_dir = wp_upload_dir();
 				$ta = new twitterAggregator( array(
@@ -91,7 +89,21 @@ the_showcase();
 				$ta->display_unstyled();
 				?>
 			</div>
-			<?php } ?>
+				<?php 
+			} 
+			if ( has_cmb_value( 'part_awards' ) ) {
+				print '<div class="awards"><h4>Awards</h4>';
+				$awards = get_cmb_value( 'part_awards' ); 
+				foreach ( $awards as $award ) { 
+					if ( !empty( $award['alt'] ) && !empty( $award['image'] ) ) {
+						if ( !empty( $award['link'] ) ) print "<a href='" . $award['link'] . "'>";
+						print "<img src='" . $award['image'] . "' alt='" . $award['alt'] . "' />";
+						if ( !empty( $award['link'] ) ) print "</a>";
+					}
+				}
+				print "</div>";
+			}
+			?>
 		</div>
 
 		<div class="three-quarter">

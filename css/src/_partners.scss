@@ -281,7 +281,6 @@
 
 .partner {
 	.sidebar {
-
 		@include respond-to( 768px ) {
 			position: relative;
 			padding-top: 40px;
@@ -323,7 +322,7 @@
 				padding: 20px 20px 20px 45px;
 				color: $teal;
 			}
-			
+
 			.contact {
 				font-size: 13px;
 				line-height: 20px;
@@ -346,6 +345,10 @@
 						float: none;
 					}
 
+				}
+
+				.btn {
+					min-width: 190px;
 				}
 
 				&.small {
@@ -382,10 +385,14 @@
 			padding: 30px 0 0;
 
 			h4 {
-				font-size: 16px;
+				@include font-bold;
+				font-style: normal;
+				font-size: 14px;
 				line-height: 20px;
+				text-transform: uppercase;
 				background: url(../img/icon-twitter-bird.png) left center no-repeat;
 				padding: 20px 20px 20px 45px;
+				color: $teal;
 
 				&, a {
 					color: $teal;
@@ -401,6 +408,31 @@
 						color: $grey;
 						font-size: .9em;
 					}
+				}
+			}
+		}
+
+		.linkedin {
+			padding: 10px 0;
+			text-align: center;
+		}
+
+		.awards {
+			padding: 10px 0;
+
+			h4 {
+				@include font-bold;
+				font-style: normal;
+				font-size: 14px;
+				line-height: 20px;
+				text-transform: uppercase;
+				background: url(../img/icon-awards.png) left center no-repeat;
+				padding: 20px 20px 20px 45px;
+				color: $teal;
+				margin: 10px 0;
+
+				&, a {
+					color: $teal;
 				}
 			}
 		}

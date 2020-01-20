@@ -543,6 +543,13 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
     $partner_info->add_field( array(
+        'name' => 'LinkedIn URL',
+        'id' => CMB_PREFIX . 'partner_linkedin',
+        'type' => 'text_medium',
+        'desc' => 'Enter the full URL to this partners LinkedIn profile/company page.'
+    ) );
+
+    $partner_info->add_field( array(
         'name' => 'Website',
         'id' => CMB_PREFIX . 'partner_website',
         'type' => 'text_url'
