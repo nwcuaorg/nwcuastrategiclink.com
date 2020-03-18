@@ -170,6 +170,21 @@ the_showcase();
 		</div>
 		<?php } ?>
 
+		<?php if ( has_cmb_value( 'partner_webinars' ) ) { ?>
+		<div class="accordion-box bg-lime">
+			<div class="accordion-box-title">
+				<div class="wrap">
+					<h4>Upcoming Webinars</h4>
+				</div>
+			</div>
+			<div class="accordion-box-content">
+				<div class="wrap">
+					<?php show_cmb_wysiwyg_value( 'partner_webinars' ); ?>
+				</div>
+			</div>
+		</div>
+		<?php } ?>
+
 		<?php if ( has_cmb_value( 'partner_videos' ) ) { ?>
 		<div class="accordion-box bg-teal-lightest">
 			<div class="accordion-box-title">

@@ -571,6 +571,14 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
     $partner_info->add_field( array(
+        'name' => 'Upcoming Webinars',
+        'desc' => 'Enter some links to and perhaps descriptions of upcoming webinars for this partner.',
+        'id' => CMB_PREFIX . 'partner_webinars',
+        'type' => 'wysiwyg',
+        'options' => array( 'textarea_rows' => 7, )
+    ) );
+
+    $partner_info->add_field( array(
         'name' => 'Videos',
         'desc' => 'Paste video URLs to embed videos automatically, so you can enter content above/below it.',
         'id' => CMB_PREFIX . 'partner_videos',
