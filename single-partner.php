@@ -171,7 +171,7 @@ the_showcase();
 		<?php } ?>
 
 		<?php if ( has_cmb_value( 'partner_webinars' ) ) { ?>
-		<div class="accordion-box bg-lime">
+		<div class="accordion-box bg-grey-dark">
 			<div class="accordion-box-title">
 				<div class="wrap">
 					<h4>Upcoming Webinars</h4>
