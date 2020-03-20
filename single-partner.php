@@ -23,6 +23,15 @@ $testimonials = get_cmb_value( 'partner_testimonials' );
 $products = get_cmb_value( 'partner_products' );
 
 
+function expand_check( $accordion ) {
+	if ( isset( $_REQUEST['expand'] ) ) {
+		if ( $_REQUEST['expand'] == $accordion ) {
+			print " open";
+		}
+	}
+}
+
+
 // display header
 get_header();
 
@@ -122,7 +131,8 @@ the_showcase();
 	<div class="accordion no-icons">
 
 		<?php if ( has_cmb_value( 'partner_webinars' ) ) { ?>
-		<div class="accordion-box bg-grey-dark">
+		<a name="webinars"></a>
+		<div class="accordion-box bg-grey-dark<?php expand_check( 'webinars' ) ?>">
 			<div class="accordion-box-title">
 				<div class="wrap">
 					<h4>Upcoming Webinars</h4>
@@ -136,7 +146,8 @@ the_showcase();
 		</div>
 		<?php } ?>
 
-		<div class="accordion-box open bg-teal">
+		<a name="products"></a>
+		<div class="accordion-box open bg-teal<?php expand_check( 'products' ) ?>">
 			<div class="accordion-box-title">
 				<div class="wrap">
 					<h4>Products Offered</h4>
@@ -156,7 +167,8 @@ the_showcase();
 		</div>
 
 		<?php if ( has_cmb_value( 'partner_testimonials' ) ) { ?>
-		<div class="accordion-box bg-teal-light">
+		<a name="testimonials"></a>
+		<div class="accordion-box bg-teal-light<?php expand_check( 'testimonials' ) ?>">
 			<div class="accordion-box-title">
 				<div class="wrap">
 					<h4>Testimonials</h4>
@@ -171,7 +183,8 @@ the_showcase();
 		<?php } ?>
 
 		<?php if ( has_cmb_value( 'partner_articles' ) ) { ?>
-		<div class="accordion-box bg-teal-lighter">
+		<a name="articles"></a>
+		<div class="accordion-box bg-teal-lighter<?php expand_check( 'articles' ) ?>">
 			<div class="accordion-box-title">
 				<div class="wrap">
 					<h4>Articles</h4>
@@ -186,7 +199,8 @@ the_showcase();
 		<?php } ?>
 
 		<?php if ( has_cmb_value( 'partner_videos' ) ) { ?>
-		<div class="accordion-box bg-teal-lightest">
+		<a name="videos"></a>
+		<div class="accordion-box bg-teal-lightest <?php expand_check( 'videos' ) ?>">
 			<div class="accordion-box-title">
 				<div class="wrap">
 					<h4>Videos</h4>
