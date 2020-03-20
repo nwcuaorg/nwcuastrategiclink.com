@@ -121,6 +121,21 @@ the_showcase();
 
 	<div class="accordion no-icons">
 
+		<?php if ( has_cmb_value( 'partner_webinars' ) ) { ?>
+		<div class="accordion-box bg-grey-dark">
+			<div class="accordion-box-title">
+				<div class="wrap">
+					<h4>Upcoming Webinars</h4>
+				</div>
+			</div>
+			<div class="accordion-box-content">
+				<div class="wrap">
+					<?php show_cmb_wysiwyg_value( 'partner_webinars' ); ?>
+				</div>
+			</div>
+		</div>
+		<?php } ?>
+
 		<div class="accordion-box open bg-teal">
 			<div class="accordion-box-title">
 				<div class="wrap">
@@ -165,21 +180,6 @@ the_showcase();
 			<div class="accordion-box-content">
 				<div class="wrap">
 					<?php show_cmb_wysiwyg_value( 'partner_articles' ); ?>
-				</div>
-			</div>
-		</div>
-		<?php } ?>
-
-		<?php if ( has_cmb_value( 'partner_webinars' ) ) { ?>
-		<div class="accordion-box bg-grey-dark">
-			<div class="accordion-box-title">
-				<div class="wrap">
-					<h4>Upcoming Webinars</h4>
-				</div>
-			</div>
-			<div class="accordion-box-content">
-				<div class="wrap">
-					<?php show_cmb_wysiwyg_value( 'partner_webinars' ); ?>
 				</div>
 			</div>
 		</div>
