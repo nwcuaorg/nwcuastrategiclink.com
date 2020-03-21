@@ -20,6 +20,16 @@
 				padding: 30px 40px;
 			}
 		}
+
+		.accordion-box-content {
+			.wrap {
+				max-width: 1140px;
+			}
+
+			@include respond-to( 1024px ) {
+				padding: 30px 40px;
+			}
+		}
 	}
 	
 	.accordion-box-title {
