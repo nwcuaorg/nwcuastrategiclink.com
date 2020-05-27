@@ -52,14 +52,12 @@ the_showcase();
 				<div class="contact<?php print ( count( $contacts )>1 ? ' small' : '' ) ?>">
 					<p>Phone: 208.286.6794<br>
 					Email: <a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a></p>
-					<?php if ( !empty( $website ) || !empty( $linkedin ) ) { ?><p><?php } ?>
 					<?php if ( !empty( $website ) ) { ?>
-					<a href="<?php print $website ?>" class="btn teal" target="_blank">Visit our Website</a><br>
+					<p><a href="<?php print $website ?>" class="btn teal" target="_blank">Visit Our Website</a></p>
 					<?php } ?>
 					<?php if ( !empty( $linkedin ) ) { ?>
-					<a href="<?php print $linkedin; ?>" class="btn teal" target="_blank">Visit us on LinkedIn</a>
+					<p><a href="<?php print $linkedin; ?>" class="" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-linkedin.png" /></a></p>
 					<?php } ?>
-					<?php if ( !empty( $website ) || !empty( $linkedin ) ) { ?></p><?php } ?>
 				</div>
 			</div>
 			<?php 
