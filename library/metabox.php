@@ -537,6 +537,13 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
     $partner_info->add_field( array(
+        'name' => 'Email Address or Contact Link',
+        'id' => CMB_PREFIX . 'partner_email',
+        'type' => 'text_medium',
+        'desc' => "The site treats email addresses appropriately, so <strong>do not</strong> add 'mailto:'."
+   ) );
+
+    $partner_info->add_field( array(
         'name' => 'Twitter ID',
         'id' => CMB_PREFIX . 'partner_twitter',
         'type' => 'text_medium'
