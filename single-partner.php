@@ -136,7 +136,7 @@ the_showcase();
 		<div class="accordion-box bg-grey-dark<?php expand_check( 'webinars' ) ?> open">
 			<div class="accordion-box-title">
 				<div class="wrap">
-					<h4>Upcoming Webinars</h4>
+					<h4>Webinars</h4>
 				</div>
 			</div>
 			<div class="accordion-box-content">

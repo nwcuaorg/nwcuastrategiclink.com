@@ -578,8 +578,8 @@ function page_metaboxes( $meta_boxes ) {
     ) );
 
     $partner_info->add_field( array(
-        'name' => 'Upcoming Webinars',
-        'desc' => 'Enter some links to and perhaps descriptions of upcoming webinars for this partner.',
+        'name' => 'Webinars',
+        'desc' => 'Enter some links to and perhaps descriptions of webinars for this partner.',
         'id' => CMB_PREFIX . 'partner_webinars',
         'type' => 'wysiwyg',
         'options' => array( 'textarea_rows' => 7, )
