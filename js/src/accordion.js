@@ -52,8 +52,10 @@ jQuery(document).ready(function($){
 	
 		setTimeout( function(){
 			var expand = getUrlParameter( 'expand' );
-			if ( expand.length > 0 ) {
-				creepToElement( expand );
+			if ( typeof( expand ) != 'undefined' ) {
+				if ( expand.length > 0 ) {
+					creepToElement( expand );
+				}
 			}
 		}, 2000 );
 	
