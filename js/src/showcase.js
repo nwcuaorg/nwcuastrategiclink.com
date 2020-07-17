@@ -104,7 +104,6 @@ jQuery(document).ready(function($){
 
 			// set showcase initial height when the first image is loaded.
 			first_slide.find('img').on( 'load', function(){
-				console.log( 'first slide image loaded.' );
 				showcase_height();
 
 				// once we're loaded up, set a timer to auto-rotate the slides.
