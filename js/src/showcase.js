@@ -105,12 +105,18 @@ jQuery(document).ready(function($){
 			// set showcase initial height when the first image is loaded.
 			first_slide.find('img').on( 'load', function(){
 				showcase_height();
+			} );
+
+
+
+			setTimeout( function(){
+				showcase_height();
 
 				// once we're loaded up, set a timer to auto-rotate the slides.
 				if ( slide_count > 1 ) {
 					auto_rotate = setInterval( next_slide, 10000 );
 				}
-			} );
+			}, 1500 );
 
 			
 
