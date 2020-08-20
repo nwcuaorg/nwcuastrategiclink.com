@@ -38,6 +38,10 @@
 <meta name="theme-color" content="#ffffff">
 <!-- end favicon -->
 
+<!-- Google AdSense tracking code -->
+<script data-ad-client="ca-pub-8745606190697468" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- /end Google AdSense tracking code -->
+
 </head>
 <body <?php body_class(); ?>>
 
