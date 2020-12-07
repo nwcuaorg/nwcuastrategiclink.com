@@ -22,7 +22,6 @@
 		}
 
 		.accordion-box-content {
-			@extend .content-style;
 
 			.wrap {
 				max-width: 1140px;
@@ -86,6 +85,7 @@
 	.accordion-box-content {
 		display: none;
 		padding: 20px;
+		@extend .content-style;
 
 		@include respond-to( 1024px ) {
 			padding: 20px 40px;
