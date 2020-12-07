@@ -22,6 +22,8 @@
 		}
 
 		.accordion-box-content {
+			@extend .content-style;
+
 			.wrap {
 				max-width: 1140px;
 			}
