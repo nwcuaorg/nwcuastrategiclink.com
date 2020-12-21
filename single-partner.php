@@ -12,6 +12,7 @@ $photo = get_cmb_value( 'partner_photo' );
 $contacts = get_cmb_value( 'partner_contacts' );
 $phone = get_cmb_value( 'partner_phone' );
 $email = get_cmb_value( 'partner_email' );
+$facebook = get_cmb_value( 'partner_facebook' );
 $twitter = str_replace( "@", "", get_cmb_value( 'partner_twitter' ) );
 $linkedin = str_replace( "@", "", get_cmb_value( 'partner_linkedin' ) );
 $website = get_cmb_value( 'partner_website' );
@@ -21,6 +22,11 @@ if ( !empty( $url['host'] ) ) {
 }
 $testimonials = get_cmb_value( 'partner_testimonials' );
 $products = get_cmb_value( 'partner_products' );
+if ( has_cmb_value( 'partner_type' ) ) {
+	$partner_type = get_cmb_value( 'partner_type' );
+} else {
+	$partner_type = 'industry';
+}
 
 
 function expand_check( $accordion ) {
@@ -36,12 +42,13 @@ function expand_check( $accordion ) {
 get_header();
 
 
-// output the showcase
-the_showcase(); 
-
 ?>
+	<div class="partner-header-background <?php print $partner_type; ?>">
+		&nbsp;
+	</div>
 
 	<div id="content" class="wrap group partner content-two-column" role="main">
+		
 
 		<div class="sidebar quarter">
 			<div class="logo">
@@ -50,57 +57,29 @@ the_showcase();
 			<div class="connect">
 				<h4>Get Connected</h4>
 				<div class="contact<?php print ( count( $contacts )>1 ? ' small' : '' ) ?>">
-					<p>Phone: 208.286.6794<br>
-					Email: <a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a></p>
-					<?php if ( !empty( $email ) ) { ?>
-					<p><a href="<?php print ( stristr( $email, '@' ) ? 'mailto:' . $email : $email ); ?>" class="btn teal" target="_blank">Connect With Us</a></p>
-					<?php } ?>
-					<?php if ( !empty( $website ) ) { ?>
-					<p><a href="<?php print $website ?>" class="btn teal" target="_blank">Visit Our Website</a></p>
-					<?php } ?>
+					<p><a href="tel:2082866794">208.286.6794</a><br>
+						<a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a></p>
+					<p>
+						<?php if ( !empty( $email ) ) { ?>
+						<a href="<?php print ( stristr( $email, '@' ) ? 'mailto:' . $email : $email ); ?>" class="btn teal" target="_blank">Connect With Us</a>
+						<?php } ?>
+						<?php if ( !empty( $website ) ) { ?>
+						<a href="<?php print $website ?>" class="btn teal" target="_blank">Visit Our Website</a>
+						<?php } ?>
+					</p>
+					<p>
 					<?php if ( !empty( $linkedin ) ) { ?>
-					<p><a href="<?php print $linkedin; ?>" class="" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-linkedin.png" /></a></p>
+					<a href="<?php print $linkedin; ?>" class="" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-linkedin.png" /></a> &nbsp;
+					<?php } ?>
+					<?php if ( !empty( $twitter ) ) { ?>
+					<a href="https://twitter.com/<?php print $twitter; ?>" class="" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/icon-twitter-bird.png" /></a> &nbsp;
+					<?php } ?>
+					<?php if ( !empty( $facebook ) ) { ?>
+					<a href="<?php print $facebook; ?>" class="" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/icon-facebook.png" /></a> &nbsp;
 					<?php } ?>
 				</div>
 			</div>
 			<?php 
-			if ( !empty( $twitter ) ) { ?>
-			<div class="twitter-feed">
-				<h4><a href="https://twitter.com/<?php print $twitter ?>">Twitter</a></h4>
-				<?php
-				$upload_dir = wp_upload_dir();
-				$ta = new twitterAggregator( array(
-
-					// twitter API consumer key, secret, and oath token and oauth secret
-				    'consumer_key' => "rI2mcCD7tUMLKiSYdbea91bv3",
-				    'consumer_secret' => "w2bmylGVQ2BGGlQb9CFJoI9xqQ3gacjie4UbiCp8wqoP0e7y4V",
-				    'oauth_access_token' => "29196496-zk653NF1sbj3mJR54Lkxcv4zmTSvm2GRTrJRf1mUA",
-				    'oauth_access_token_secret' => "QeXhPPB9xYMUAHwhnAsN2BiyIi88G3YR4UFe4aWuDJyyB",
-
-				    // comma separated list of twitter handles to pull
-				    'usernames' => $twitter,
-
-				    // set the number of tweets to show
-				    'count' => 3,
-
-					// set an update interval (minutes)
-				    'update_interval' => 10,
-
-				    // set the cache directory name/path
-				    'cache_dir' => $upload_dir['basedir'] . '/cache',
-
-				    // boolean, exclude replies, default true
-				    'exclude_replies' => true,
-
-				    // boolean, include retweets, default true
-				    'include_rts' => false
-
-				) );
-				$ta->display_unstyled();
-				?>
-			</div>
-				<?php 
-			} 
 			if ( has_cmb_value( 'part_awards' ) ) {
 				print '<div class="awards"><h4>Awards</h4>';
 				$awards = get_cmb_value( 'part_awards' ); 
@@ -155,16 +134,26 @@ the_showcase();
 				</div>
 			</div>
 			<div class="accordion-box-content">
-				<div class="wrap">
-					<div class="products">
-						<div class="product-list">
-							<?php the_product_list( get_cmb_value( 'partner_products' ) ); ?>
-						</div>
-						<button class="product-nav previous">Previous</button>
-						<button class="product-nav next">Next</button>
-					</div>
+				<div class="wrap product-listing">
+					<ul>
+					<?php 
+					$products = get_cmb_value( 'partner_products' );
+
+				    $args = array( 'post_type' => 'product', 'posts_per_page' => 30 );
+				    if ( !empty( $products ) ) {
+				    	$args[ 'post__in' ] = $products;
+				    }
+				    $loop = new WP_Query( $args );
+				    $products = array();
+				    while ( $loop->have_posts() ) : $loop->the_post();
+				    	global $post;
+				        ?><li><a href="/product/<?php print $post->post_name ?>"><?php print get_the_title() ?></a></li><?php
+				    endwhile;
+				    wp_reset_query();
+
+					?>
+					</ul>
 				</div>
-			</div>
 		</div>
 
 		<?php if ( has_cmb_value( 'partner_testimonials' ) ) { ?>
@@ -215,6 +204,10 @@ the_showcase();
 		</div>
 		<?php } ?>
 
+	</div>
+
+	<div class="group">
+		<?php the_accordion(); ?>
 	</div>
 
 <?php

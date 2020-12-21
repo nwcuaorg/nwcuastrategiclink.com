@@ -278,8 +278,19 @@
 	}
 }
 
+.partner-header-background {
+	width: 100%;
+	height: 200px;
+	background: center center no-repeat;
+	background-size: cover;
+
+	&.industry { background-image: url(../img/header-industry.webp); }
+	&.technology { background-image: url(../img/header-technology.webp); }
+	&.economic { background-image: url(../img/header-economic.webp); }
+}
 
 .partner {
+
 	.sidebar {
 		@include respond-to( 768px ) {
 			position: relative;

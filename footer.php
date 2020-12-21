@@ -45,10 +45,6 @@
 						'menu_class' => 'nav-menu' ) 
 					); ?>
 				</nav>
-				<div class="social">
-					<a href="https://twitter.com/NWStrategicLink" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-twitter.png"></a>
-					<a href="https://www.facebook.com/nwcuastrategiclink" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/social-facebook.png"></a>
-				</div>
 			</div>
 			<div class="column">
 				<h3>Resources</h3>

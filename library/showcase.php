@@ -34,12 +34,14 @@ function the_showcase() {
 				<?php print $image; ?>
 				<?php if ( !empty( $link ) ) { ?></a><?php } ?>
 				
+				<!--
 				<?php if ( !empty( $title ) || !empty( $subtitle ) ) { ?>
 				<div class="slide-content">
 					<?php if ( !empty( $title ) ) { ?><h1><?php print $title; ?></h1><?php } ?>
 					<?php if ( !empty( $subtitle ) ) { ?><h2><?php print $subtitle; ?></h2><?php } ?>
 				</div>
 				<?php } ?>
+				-->
 			</div>
 				<?php
 				$count++;

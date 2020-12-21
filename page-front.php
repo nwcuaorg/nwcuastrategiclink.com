@@ -9,20 +9,15 @@ get_header();
 ?>
 
 	<?php the_showcase(); ?>
-
-	<div class="wrap group">
-
-		<div class="featured-products">
-			<h2>Featured Products</h2>
-			<div class="products">
-				<div class="product-list">
-					<?php the_product_list( '', true ); ?>
-				</div>
-				<button class="product-nav previous">Previous</button>
-				<button class="product-nav next">Next</button>
-			</div>
-		</div>
 	
+	<div class="solutions">
+		<div class="wrap">
+			<h2>Partner Solutions</h2>
+		</div>
+		<?php the_product_category_list() ?>
+	</div>
+
+	<div class="wrap group">	
 
 		<div class="home-thirds">
 
@@ -68,13 +63,6 @@ get_header();
 
 		</div>
 
-	</div>
-	
-	<div class="solutions">
-		<div class="wrap">
-			<h2>Partner Solutions</h2>
-		</div>
-		<?php the_product_category_list() ?>
 	</div>
 
 <?php 
