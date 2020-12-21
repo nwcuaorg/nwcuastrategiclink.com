@@ -2,10 +2,10 @@
     "name": "nwcuastrategiclink",
     "version": "0.0.1",
     "devDependencies": {
-        "grunt": "^1.2.1",
+        "grunt": "*",
         "grunt-autoprefixer": "*",
         "grunt-contrib-sass": "*",
-        "grunt-contrib-uglify": "^5.0.0",
+        "grunt-contrib-uglify": "*",
         "grunt-contrib-watch": "*",
         "matchdep": "*"
     }
