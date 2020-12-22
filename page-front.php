@@ -6,6 +6,9 @@ Template Name: Page - Home
 
 get_header();
 
+
+$featured_partner = get_cmb_value( 'home_featured_partner' );
+
 ?>
 
 	<?php the_showcase(); ?>
@@ -39,18 +42,24 @@ get_header();
 					<?php
 					}
 				} // end if
+
+				wp_reset_query();
 				?>
 				<button class="home-third-button link-news" data-url="/blog"><span>All Link News</span></button>
 				<div class="clearfix"></div>
 			</div>
 
 			<div class="third match">
-				<h2><span>CU <span>Matchup</span></span></h2>
+				<h2><span>Featured<span>Partner</span></span></h2>
+				<?php
+				$post = get_post( $featured_partner );
+				setup_postdata( $post );
+				$logo = get_cmb_value( 'partner_logo' );
+				?>
 				<article>
-					<h4><a href="/cu-match-up">Looking for new ideas? Need a new income source?</a></h4>
-					<p>Use our CU Match Up Tool to find the best partners to help you increase non-interest income, help with collections, save on operating expenses and more!</p>
+					<p><a href="<?php the_permalink() ?>"><img src="<?php print $logo; ?>" /></a></p>
 				</article>
-				<button class="home-third-button cu-match" data-url="/cu-match-up"><span>Find A Match</span></button>
+				<button class="home-third-button cu-match" data-url="<?php the_permalink() ?>"><span>Learn More</span></button>
 				<div class="clearfix"></div>
 			</div>
 

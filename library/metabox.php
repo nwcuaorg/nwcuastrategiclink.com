@@ -684,6 +684,30 @@ function page_metaboxes( $meta_boxes ) {
         'options' => array( 'textarea_rows' => 7 )
     ) );
 
+
+
+    // accordion metabox
+    $part_accordion_metabox = new_cmb2_box( array(
+        'id' => 'home_featured_partner',
+        'title' => 'Featured Partner',
+        'description' => "Featured Partner",
+        'object_types' => array( 'page' ), // post type
+        'show_on' => array(
+            'key' => 'template',
+            'value' => array( "page-front" )
+        ),
+        'context' => 'normal',
+        'priority' => 'high',
+    ) );
+
+    $part_accordion_metabox->add_field( array(
+        'name' => 'Featured Partner',
+        'id' => CMB_PREFIX . 'home_featured_partner',
+        'type' => 'select',
+        'options' => $partners
+    ) );
+
+
 }
 add_filter( 'cmb2_init', 'page_metaboxes' );
 
