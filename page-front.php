@@ -27,7 +27,7 @@ $featured_partner = get_cmb_value( 'home_featured_partner' );
 			<div class="third news">
 				<h2><span>The Link <span>News</span></span></h2>
 				<?php
-				$posts = get_posts( 'numberposts=3&order=DESC&orderby=date&post_status=publish' );
+				$posts = get_posts( 'numberposts=2&order=DESC&orderby=date&post_status=publish' );
 				$post = $posts[0];
 
 				// if we have some
@@ -63,12 +63,15 @@ $featured_partner = get_cmb_value( 'home_featured_partner' );
 				<div class="clearfix"></div>
 			</div>
 
+
+			<!--
 			<div class="third events">
 				<h2><span>Upcoming Link <span>Events</span></span></h2>
 				<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('home-events')) : ?>[events widget]<?php endif; ?>
 				<button class="home-third-button link-events" data-url="/events/month"><span>All Link Events</span></button>
 				<div class="clearfix"></div>
 			</div>
+			-->
 
 		</div>
 
