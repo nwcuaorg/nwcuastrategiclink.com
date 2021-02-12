@@ -112,7 +112,7 @@ get_header();
 
 		<?php if ( has_cmb_value( 'partner_webinars' ) ) { ?>
 		<a name="webinars"></a>
-		<div class="accordion-box bg-grey-dark<?php expand_check( 'webinars' ) ?> open">
+		<div class="accordion-box bg-grey-dark<?php expand_check( 'webinars' ) ?>">
 			<div class="accordion-box-title">
 				<div class="wrap">
 					<h4>Webinars</h4>
@@ -127,7 +127,7 @@ get_header();
 		<?php } ?>
 
 		<a name="products"></a>
-		<div class="accordion-box open bg-teal<?php expand_check( 'products' ) ?>">
+		<div class="accordion-box bg-teal<?php expand_check( 'products' ) ?>">
 			<div class="accordion-box-title">
 				<div class="wrap">
 					<h4>Products Offered</h4>
