@@ -64,14 +64,12 @@ $featured_partner = get_cmb_value( 'home_featured_partner' );
 			</div>
 
 
-			<!--
 			<div class="third events">
 				<h2><span>Upcoming Link <span>Events</span></span></h2>
 				<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('home-events')) : ?>[events widget]<?php endif; ?>
 				<button class="home-third-button link-events" data-url="/events/month"><span>All Link Events</span></button>
 				<div class="clearfix"></div>
 			</div>
-			-->
 
 		</div>
 
