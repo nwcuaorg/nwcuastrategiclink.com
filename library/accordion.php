@@ -35,7 +35,7 @@ function the_accordion() {
 				</div>
 				<div class="accordion-box-content">
 					<div class="wrap">
-					<?php print wpautop( $content ); ?>
+					<?php print apply_filters( 'the_content', $content ); ?>
 					</div>
 				</div>
 			</div>
