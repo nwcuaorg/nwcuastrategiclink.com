@@ -127,6 +127,7 @@ function p_is_image( $img_path ) {
 // add support for eps files.
 add_filter( 'upload_mimes', function ( $mime_types ) {
     $mime_types[ 'eps' ] = 'application/postscript';
+    $mime_types[ 'ai' ] = 'application/postscript';
     return $mime_types;
 } );
 
