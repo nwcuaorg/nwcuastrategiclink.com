@@ -18,24 +18,7 @@
 		<div class="wrap">
 			<div class="column first">
 				<h3>Connect With Us</h3>
-				<p>800.995.9064 Phone<br>
-					877.928.6397 Fax<br>
-					<a href="mailto:strategiclink@nwcua.org">strategiclink@nwcua.org</a></p>
-
-				<p><strong>Idaho Office:</strong><br>
-					2710 W Sunrise Rim Rd,<br>
-					Suite 100<br>
-					Boise, ID 83705</p>
-
-				<p><strong>Oregon Office:</strong><br>
-					13221 SW 68th Pkwy,<br>
-					Suite 400<br>
-					Tigard, OR 97223</p>
-
-				<p><strong>Washington Office:</strong><br>
-					18000 International Blvd,<br>
-					Suite 350<br>
-					Seattle, WA 98188</p>
+				<?php print do_shortcode( '[snippet slug="footer-address" /]' ); ?>
 			</div>
 			<div class="column">
 				<h3>Links</h3>
