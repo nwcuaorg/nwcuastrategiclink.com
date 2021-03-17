@@ -164,7 +164,7 @@ function page_metaboxes( $meta_boxes ) {
 
 
 
-
+    /*
     // select all products
     $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'orderby' => 'name', 'order' => 'ASC' );
     $loop = new WP_Query( $args );
@@ -217,7 +217,7 @@ function page_metaboxes( $meta_boxes ) {
         'type' => 'multicheck',
         'options' => $products,
     ) );
-
+    
 
 
     // accordion metabox
@@ -282,18 +282,9 @@ function page_metaboxes( $meta_boxes ) {
         'type' => 'multicheck',
         'options' => $products,
     ) );
+    
 
 
-
-
-    // select all products
-    $args = array( 'post_type' => 'partner', 'posts_per_page' => -1, 'orderby' => 'name', 'order' => 'ASC' );
-    $loop = new WP_Query( $args );
-    $partners = array();
-    while ( $loop->have_posts() ) : $loop->the_post();
-        $partners[get_the_ID()] = get_the_title();
-    endwhile;
-    wp_reset_query();
 
 
 
@@ -338,7 +329,16 @@ function page_metaboxes( $meta_boxes ) {
         'type' => 'multicheck',
         'options' => $partners,
     ) );
+    */
 
+    // select all partners
+    $args = array( 'post_type' => 'partner', 'posts_per_page' => -1, 'orderby' => 'name', 'order' => 'ASC' );
+    $loop = new WP_Query( $args );
+    $partners = array();
+    while ( $loop->have_posts() ) : $loop->the_post();
+        $partners[get_the_ID()] = get_the_title();
+    endwhile;
+    wp_reset_query();
 
     // accordion metabox
     $part_accordions_metabox = new_cmb2_box( array(
@@ -547,6 +547,7 @@ function page_metaboxes( $meta_boxes ) {
         'options' => array( 'textarea_rows' => 7, )
     ) );
 
+    /*
     $partner_info->add_field( array(
         'name' => 'Products',
         'desc' => 'Select the products this partner provides.',
@@ -554,6 +555,7 @@ function page_metaboxes( $meta_boxes ) {
         'type' => 'multicheck',
         'options' => $products,
     ) );
+    */
 
     $partner_info->add_field( array(
         'name' => 'Goals',

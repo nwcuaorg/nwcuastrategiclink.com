@@ -126,6 +126,7 @@ get_header();
 		</div>
 		<?php } ?>
 
+		<!--
 		<a name="products"></a>
 		<div class="accordion-box bg-teal<?php expand_check( 'products' ) ?>">
 			<div class="accordion-box-title">
@@ -137,6 +138,7 @@ get_header();
 				<div class="wrap product-listing">
 					<ul>
 					<?php 
+					/*
 					$products = get_cmb_value( 'partner_products' );
 
 				    $args = array( 'post_type' => 'product', 'posts_per_page' => 30 );
@@ -150,11 +152,12 @@ get_header();
 				        ?><li><a href="/product/<?php print $post->post_name ?>"><?php print get_the_title() ?></a></li><?php
 				    endwhile;
 				    wp_reset_query();
-
+				    */
 					?>
 					</ul>
 				</div>
 		</div>
+		-->
 
 		<?php if ( has_cmb_value( 'partner_testimonials' ) ) { ?>
 		<a name="testimonials"></a>
